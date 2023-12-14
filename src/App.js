@@ -67,7 +67,7 @@ class App extends React.Component{
   render(){
       return(
           <>
-              <h1 style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
+              <h1 className= "bg-primary" style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
                 CSCI 2720 Group Project Cultural Event Platform
               </h1>
               <BrowserRouter>

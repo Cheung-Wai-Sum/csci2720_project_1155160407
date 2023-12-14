@@ -18,7 +18,7 @@ const Table = () => {
 
   return (
     <>
-    <h2>
+    <h2 class = "bg-info">
       List of Cultural Events
     </h2>
     <table className="event-table">

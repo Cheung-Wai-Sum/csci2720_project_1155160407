@@ -23,7 +23,7 @@ const SearchKeyword = () => {
   return (
     <>
     <div className="border border-3 border-dark rounded">
-      <h2>Search Locations by keywords in the name</h2>
+      <h2 class = "bg-info">Search Locations by keywords in the name</h2>
       <p>e.g Hong Kong or Tuen Mun or Kwai Tsing</p>
       
       <input className="form-control" style={{ width: '400px'}}

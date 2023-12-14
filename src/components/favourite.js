@@ -19,7 +19,7 @@ const Userfavourite = () => {
     };
   return (
     <>
-    <h1>User Favourite Locations</h1>
+    <h1 class = "bg-info">User Favourite Locations</h1>
       <div>
       <table className="event-table">
         <thead>

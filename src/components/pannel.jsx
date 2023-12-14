@@ -22,7 +22,7 @@ const Pannel = () => {
   return (
     <>
     
-    <h2 class="font-italic">Event Admin Dashboard</h2>
+    <h2 class="bg-info">Event Admin Dashboard</h2>
       <div className="border border-3 border-dark rounded">
         <h2>Create New Event</h2>
         <form id="create" action="http://localhost:3000/create" method="POST">
@@ -91,7 +91,7 @@ const Pannel = () => {
 
       
       <div className="border border-3 border-dark rounded">
-      <h1>User information Dashboard</h1>
+      <h1 class="bg-info">User information Dashboard</h1>
       <table className="event-table">
         <thead>
           <tr>
