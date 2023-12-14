@@ -108,22 +108,25 @@ db.once('open', function () {
     }
   });
   
+  const escapeRegex = (string) => {
+    return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+  };
+  
   app.get('/api/venue', async (req, res) => {
     try {
       const keyword = req.query.keyword;
+      const escapedKeyword = escapeRegex(keyword);
       const venues = await Venue.find({
-        location: { $regex: new RegExp(keyword, 'i') }, // Case-insensitive search
+        location: { $regex: new RegExp(escapedKeyword, 'i') }, // Case-insensitive search
       });
   
       if (venues.length === 0) {
         res.status(404).send('No locations found');
       } else {
-        const formattedVenues = venues.map((venue) => {
-          return {
-            vid: venue.vid,
-            location: venue.location,
-          };
-        });
+        const formattedVenues = venues.map((venue) => ({
+          vid: venue.vid,
+          location: venue.location,
+        }));
         res.status(200).json(formattedVenues);
       }
     } catch (err) {
