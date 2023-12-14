@@ -2,70 +2,63 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const Sorting = () => {
-  const [eventTable, setEventTable] = useState([]);
-  const [sortAscending, setSortAscending] = useState(true);
+  const [locationTable, setLocationTable] = useState([]);
 
   useEffect(() => {
-    fetchEventData();
+    const fetchData = async () => {
+      try {
+        const [venueResponse, eventResponse] = await Promise.all([
+          axios.get('http://localhost:3000/api/venue', {
+            params: {
+              keyword: '', // Add any keyword for filtering if needed
+            },
+          }),
+          axios.get('http://localhost:3000/api/event'),
+        ]);
+
+        const eventCounts = {};
+        eventResponse.data.forEach((event) => {
+          const location = event.venue?.location || 'Unknown';
+          eventCounts[location] = (eventCounts[location] || 0) + 1;
+        });
+
+        const updatedLocationTable = venueResponse.data.map((location) => ({
+          ...location,
+          numEvents: eventCounts[location.location] || 0,
+        }));
+
+        setLocationTable(updatedLocationTable);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+    const refreshInterval = setInterval(fetchData, 60000); // Refresh data every 60 seconds
+
+    return () => {
+      clearInterval(refreshInterval); // Clear the interval when the component unmounts
+    };
   }, []);
-
-  const fetchEventData = () => {
-    axios
-      .get('http://localhost:3000/api/event')
-      .then((response) => {
-        const sortedEvents = sortEvents(response.data);
-        setEventTable(sortedEvents);
-      })
-      .catch((error) => {
-        console.error('Error fetching event data:', error);
-      });
-  };
-
-  const sortEvents = (events) => {
-    const sortedEvents = [...events];
-    sortedEvents.sort((a, b) => {
-      const countA = a.venue.events.length;
-      const countB = b.venue.events.length;
-      return sortAscending ? countA - countB : countB - countA;
-    });
-    return sortedEvents;
-  };
-
-  const handleSortClick = () => {
-    setSortAscending(!sortAscending);
-    const sortedEvents = sortEvents(eventTable);
-    setEventTable(sortedEvents);
-  };
 
   return (
     <>
-      <h1>Home page</h1>
-      <h2>List of Cultural Event</h2>
-      <button onClick={handleSortClick}>
-        Sort by Number of Events at Venue
-      </button>
-      <table className="event-table">
+      <h1></h1>
+      <h2>Number of Events at a venue</h2>
+      <table className="location-table">
         <thead>
           <tr>
-            <th>Event ID</th>
-            <th>Title</th>
-            <th>Venue</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Presenter</th>
-            <th>Price</th>
+            <th>Location ID</th>
+            <th>Location Name</th>
+            <th>Number of Events</th>
           </tr>
         </thead>
         <tbody>
-          {eventTable.map((event) => (
-            <tr key={event.eventid}>
-              <td>{event.eventid}</td>
-              <td>{event.title}</td>
-              <td>{event.venue.location}</td>
-              <td>{event.date}</td>
-              <td>{event.description}</td>
-              <td>{event.presenter}</td>
-              <td>{event.price}</td>
+          {locationTable.map((location) => (
+            <tr key={location.vid}>
+              <td>{location.vid}</td>
+              <td>{location.location}</td>
+              <td>{location.numEvents}</td>
             </tr>
           ))}
         </tbody>

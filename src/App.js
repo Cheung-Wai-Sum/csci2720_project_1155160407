@@ -1,4 +1,3 @@
-import ReactDOM from "react-dom/client";
 import React from 'react';
 import {
   BrowserRouter,
@@ -6,10 +5,7 @@ import {
   Route,
   Link,
   } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+
 
 import Table from './components/home.js';
 import './components/home.css';
@@ -22,7 +18,7 @@ const Home = () => (
   </div>
 );
 
-const Sort = () => (
+const Number = () => (
   <div>
     <Sorting />
   </div>
@@ -70,7 +66,7 @@ class App extends React.Component{
                       <Link to="/" >Home</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/sort" >Sorting</Link>
+                      <Link to="/number" >Number of Event in a Location</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/location" >Location</Link>
@@ -95,7 +91,7 @@ class App extends React.Component{
 
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/sort" element={<Sort />} />
+                  <Route path="/number" element={<Number />} />
                   <Route path="/location" element={<Location />} />
                   <Route path="/search" element={<Search />} />
                   <Route path="/separate" element={<Separate />} />

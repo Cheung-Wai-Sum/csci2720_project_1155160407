@@ -77,6 +77,7 @@ db.once('open', function () {
   const Event = mongoose.model("events", EventSchema);
   const Venue = mongoose.model("venues", VenueSchema);
 
+  // For Home page List , Show the Number of Event, Search Event less than $100
   app.get('/api/event', async (req, res) => {
     try {
       const events = await Event.find().populate('venue', 'vid location');
@@ -111,7 +112,7 @@ db.once('open', function () {
   const escapeRegex = (string) => {
     return string.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
   };
-  
+  //For search location
   app.get('/api/venue', async (req, res) => {
     try {
       const keyword = req.query.keyword;
