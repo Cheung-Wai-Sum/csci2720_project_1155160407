@@ -12,6 +12,7 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import Table from './components/home.js';
+import './components/home.css';
 
 const Home = () => (
   <div>

@@ -24,7 +24,7 @@ const Table = () => {
     <h2>
       List of Event
     </h2>
-    <table>
+    <table className="event-table">
       <thead>
         <tr>
           <th>Event ID</th>
