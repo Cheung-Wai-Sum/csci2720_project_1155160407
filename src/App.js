@@ -28,8 +28,7 @@ const List = () => (
 
 const Location = () => (
   <div>
-    <h2>Location</h2>
-    <p>Here are our Location.</p>
+    
   </div>
 );
 
