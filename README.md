@@ -1,10 +1,15 @@
 ## 1.Open a terminal to Run the Local Server
 
-node server.js
+### `node server.js`
 
 ## 2.Open another terminal to Install module
 
-npm install express mongoose axios
+### `npm install`
+
+## 3. Open your git branch
+
+### `git branch dev_(name)`
+### `git checkout dev_(name)`
 
 ## In the terminal run
 
