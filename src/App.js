@@ -13,8 +13,8 @@ import SearchKeyword from './components/keyword.js';
 import SearchPrice from './components/price.js';
 import Sorting from './components/sort.js';
 import Pannel from './components/pannel.jsx';
-import Login from "./components/loginPage.js";
-
+import Login from './components/loginPage.js';
+import UserComment from './components/comment.js';
 const Home = () => (
   <div>
     <Table />
@@ -38,8 +38,9 @@ const Search = () => (
     <SearchKeyword />
   </div>
 );
-const Separate = () => (
+const Comment = () => (
   <div>
+    <UserComment/>
   </div>
 );
 const Favourite = () => (
@@ -83,7 +84,7 @@ class App extends React.Component{
                       <Link to="/location" >Location</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/separate" >Separate</Link>
+                      <Link to="/comment" >Comment</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/favourite" >Favourite</Link>
@@ -100,7 +101,7 @@ class App extends React.Component{
                   <Route path="/number" element={<Number />} />
                   <Route path="/location" element={<Location />} />
                   <Route path="/search" element={<Search />} />
-                  <Route path="/separate" element={<Separate />} />
+                  <Route path="/comment" element={<Comment />} />
                   <Route path="/favourite" element={<Favourite />} />
                   <Route path="/price" element={<Price />} />
                   <Route path="/admin" element={<Admin />} />
