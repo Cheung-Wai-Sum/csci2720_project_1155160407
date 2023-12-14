@@ -106,8 +106,20 @@ db.once('open', function () {
     },
   });
 
+  const FavouriteSchema = mongoose.Schema({
+    username: {
+      type: String,
+      required: true,
+    },
+    venue: {
+      type: Schema.Types.ObjectId,
+      ref: 'venues',
+    },
+  });
+
   const User = mongoose.model("users", UserSchema);
   const Comment = mongoose.model("comments", CommentSchema);
+  const Favourite = mongoose.model("favourite", FavouriteSchema);
   const Event = mongoose.model("events", EventSchema);
   const Venue = mongoose.model("venues", VenueSchema);
 
@@ -409,6 +421,55 @@ db.once('open', function () {
       await newComment.save();
   
       res.status(200).send('Comment added successfully');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
+  //read favourite
+  app.get('/api/favourite', async (req, res) => {
+    try {
+      const favourites = await Favourite.find().populate('venue', 'vid location');
+      
+      if (favourites.length === 0) {
+        res.status(404).send('No events found');
+      } else {
+        const formattedFavourites = favourites.map(favourite => {
+          return {
+            username: favourite.username,
+            venue: {
+              vid: favourite.venue.vid,
+              location: favourite.venue.location,
+            },
+            
+          };
+        });
+        console.log(formattedFavourites);
+        res.status(200).json(formattedFavourites);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  // add favourite
+  app.post('/addfavourite', async (req, res) => {
+    try {
+      const userName = req.body.userName;
+      const locationID = req.body.locationID;
+      
+      const venue = await Venue.findOne({vid : locationID});
+      const newFavourite = new Favourite({
+        username: userName,
+        venue: venue._id,
+      });
+      console.log(venue);
+  
+      await newFavourite.save();
+  
+      res.status(200).send('Favourite Location added successfully');
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');

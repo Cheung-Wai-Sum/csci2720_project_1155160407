@@ -15,6 +15,8 @@ import Sorting from './components/sort.js';
 import Pannel from './components/pannel.jsx';
 import Login from './components/loginPage.js';
 import UserComment from './components/comment.js';
+import Userfavourite from './components/favourite.js';
+
 const Home = () => (
   <div>
     <Table />
@@ -45,6 +47,7 @@ const Comment = () => (
 );
 const Favourite = () => (
   <div>
+    <Userfavourite />
   </div>
 );
 const Price = () => (

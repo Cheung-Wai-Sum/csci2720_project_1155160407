@@ -28,6 +28,7 @@ const UserComment = () => {
             <th>Username</th>
             <th>Comment</th>
             <th>Venue</th>
+            <th>Location ID</th>
           </tr>
         </thead>
         <tbody>
@@ -36,6 +37,7 @@ const UserComment = () => {
               <td>{comment.username}</td>
               <td>{comment.comment}</td>
               <td>{comment.venue.location}</td>
+              <td>{comment.venue.vid}</td>
             </tr>
           ))}
         </tbody>
