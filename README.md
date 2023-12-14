@@ -10,7 +10,6 @@ You need to import csci2720project.events.json csci2720project.venues.json to th
 
 ### `npm install`
 
-
 ## 3. In the terminal run
 
 In the project directory, you can run:
