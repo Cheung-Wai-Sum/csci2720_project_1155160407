@@ -1,0 +1,140 @@
+[{
+  "_id": {
+    "$oid": "657a3fe8654629093fc60e89"
+  },
+  "vid": 1,
+  "location": "Hong Kong Cultural Centre (Concert Hall)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.17053,
+      22.29386
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a44ad654629093fc60e98"
+  },
+  "vid": 2,
+  "location": "Hong Kong Cultural Centre (Grand Theatre)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.17053,
+      22.29386
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a4504654629093fc60e99"
+  },
+  "vid": 3,
+  "location": "Hong Kong Cultural Centre (Studio Theatre)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.17053,
+      22.29386
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a453b654629093fc60e9b"
+  },
+  "vid": 4,
+  "location": "Hong Kong Cultural Centre (Exhibition Gallery)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.17053,
+      22.29386
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a4586654629093fc60e9d"
+  },
+  "vid": 5,
+  "location": "Hong Kong Cultural Centre (Foyer Exhibition Areas)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.17053,
+      22.29386
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a4611654629093fc60e9e"
+  },
+  "vid": 6,
+  "location": "Tuen Mun Town Hall (Music Studio)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      113.976771,
+      22.39181
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a46bd654629093fc60ea1"
+  },
+  "vid": 7,
+  "location": "Tuen Mun Town Hall (Lecture Room (1))",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      113.976771,
+      22.39181
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a46fe654629093fc60ea3"
+  },
+  "vid": 8,
+  "location": "Kwai Tsing Theatre (Dance Studio)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.12623,
+      22.35665
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a471c654629093fc60ea4"
+  },
+  "vid": 9,
+  "location": "Kwai Tsing Theatre (Rehearsal Room)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.12623,
+      22.35665
+    ]
+  }
+},
+{
+  "_id": {
+    "$oid": "657a4772654629093fc60ea5"
+  },
+  "vid": 10,
+  "location": "Kwai Tsing Theatre (Lecture Room)",
+  "geometry": {
+    "type": "Point",
+    "coordinates": [
+      114.12623,
+      22.35665
+    ]
+  }
+}]

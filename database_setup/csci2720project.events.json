@@ -1,0 +1,420 @@
+[{
+  "_id": {
+    "$oid": "657a400d654629093fc60e8d"
+  },
+  "eventid": 1,
+  "title": "Albert Au Folk Together In Concert 2023",
+  "venue": {
+    "$oid": "657a3fe8654629093fc60e89"
+  },
+  "date": "2023-12-26T20:00:00.000Z",
+  "description": "Concert",
+  "presenter": "Albert Au",
+  "price": 380
+},
+{
+  "_id": {
+    "$oid": "657a4028654629093fc60e8e"
+  },
+  "eventid": 2,
+  "title": "ANGELIQUE KIDJO-MOTHER NATURE",
+  "venue": {
+    "$oid": "657a3fe8654629093fc60e89"
+  },
+  "date": "2024-02-23T20:00:00.000Z",
+  "description": "Song",
+  "presenter": "ANGELIQUE",
+  "price": 180
+},
+{
+  "_id": {
+    "$oid": "657a4033654629093fc60e8f"
+  },
+  "eventid": 3,
+  "title": "BALTIC SEA PHILHARMONIC-NUTCRACKER REIMAGINED",
+  "venue": {
+    "$oid": "657a3fe8654629093fc60e89"
+  },
+  "date": "2024-03-16T20:00:00.000Z",
+  "description": "Philharmonic",
+  "presenter": "BALTIC SEA PHILHARMONIC",
+  "price": 280
+},
+{
+  "_id": {
+    "$oid": "657a47f7654629093fc60eaa"
+  },
+  "eventid": 4,
+  "title": "BAYERISCHE STAATSOPER(BAVARIAN STATE OPERA)-RICHARD STRAUSS' ARIADNE AUF NAXOS",
+  "venue": {
+    "$oid": "657a44ad654629093fc60e98"
+  },
+  "date": "2024-02-24T14:30:00.000Z",
+  "description": "OPERA",
+  "presenter": "BAYERISCHE STAATSOPER",
+  "price": 300
+},
+{
+  "_id": {
+    "$oid": "657a48df654629093fc60ead"
+  },
+  "eventid": 5,
+  "title": "National Ballet of China Red Detachment of Women",
+  "venue": {
+    "$oid": "657a44ad654629093fc60e98"
+  },
+  "date": "2024-01-10T14:30:00.000Z",
+  "description": "China Red Detachment",
+  "presenter": "China Red Detachment",
+  "price": 180
+},
+{
+  "_id": {
+    "$oid": "657a48ea654629093fc60eae"
+  },
+  "eventid": 6,
+  "title": "National Ballet of China Swan Lake",
+  "venue": {
+    "$oid": "657a44ad654629093fc60e98"
+  },
+  "date": "2024-01-13T19:30:00.000Z",
+  "description": "Ballet",
+  "presenter": "China Red Detachment",
+  "price": 180
+},
+{
+  "_id": {
+    "$oid": "657a48f0654629093fc60eaf"
+  },
+  "eventid": 7,
+  "title": "Threshold - Egress and Threshold - Ingress",
+  "venue": {
+    "$oid": "657a4504654629093fc60e99"
+  },
+  "date": "2023-12-09T15:00:00.000Z",
+  "description": "Dance",
+  "presenter": "PASSOVERDANCE LIMITED",
+  "price": 450
+},
+{
+  "_id": {
+    "$oid": "657a48f4654629093fc60eb0"
+  },
+  "eventid": 8,
+  "title": "Xu Lingzi and Yue PiPa Ensemble",
+  "venue": {
+    "$oid": "657a4504654629093fc60e99"
+  },
+  "date": "2024-01-07T20:00:00.000Z",
+  "description": "Talk",
+  "presenter": "YuePiPa Ensemble",
+  "price": 180
+},
+{
+  "_id": {
+    "$oid": "657a48fa654629093fc60eb1"
+  },
+  "eventid": 9,
+  "title": "Faith Healer - Brian Friel&nbsp;by Theatre du Pif",
+  "venue": {
+    "$oid": "657a4504654629093fc60e99"
+  },
+  "date": "2024-01-19T14:30:00.000Z",
+  "description": "Drama",
+  "presenter": "Theatre du Pif",
+  "price": 340
+},
+{
+  "_id": {
+    "$oid": "657a48fe654629093fc60eb2"
+  },
+  "eventid": 10,
+  "title": "2023 KidsArt Drawing Competition Exhibition",
+  "venue": {
+    "$oid": "657a453b654629093fc60e9b"
+  },
+  "date": "2023-12-23T09:00:00.000Z",
+  "description": "Exhibition",
+  "presenter": "China Life",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4903654629093fc60eb3"
+  },
+  "eventid": 11,
+  "title": "Animitta Itinerant Exhibition",
+  "venue": {
+    "$oid": "657a453b654629093fc60e9b"
+  },
+  "date": "2023-12-25T14:00:00.000Z",
+  "description": "Exhibition",
+  "presenter": "HKSEA",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4909654629093fc60eb4"
+  },
+  "eventid": 12,
+  "title": "Hong Kong Vehicle Repair Cultural Exhibition",
+  "venue": {
+    "$oid": "657a453b654629093fc60e9b"
+  },
+  "date": "2023-12-29T14:30:00.000Z",
+  "description": "Exhibition",
+  "presenter": "HKVRMA",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a490f654629093fc60eb5"
+  },
+  "eventid": 13,
+  "title": "Respectfully Yours (Photo Exhibition)",
+  "venue": {
+    "$oid": "657a4586654629093fc60e9d"
+  },
+  "date": "2023-12-18T12:00:00.000Z",
+  "description": "Exhibiton",
+  "presenter": "HK Camera Club",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4913654629093fc60eb6"
+  },
+  "eventid": 14,
+  "title": "(Painting and Calligraphy Exhibition)",
+  "venue": {
+    "$oid": "657a4586654629093fc60e9d"
+  },
+  "date": "2023-12-22T12:00:00.000Z",
+  "description": "Exhibition",
+  "presenter": "PAAHKC",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4918654629093fc60eb7"
+  },
+  "eventid": 15,
+  "title": "Black & White Photos Exhibition 2023",
+  "venue": {
+    "$oid": "657a4586654629093fc60e9d"
+  },
+  "date": "2023-12-14T12:00:00.000Z",
+  "description": "Exhibtion",
+  "presenter": "B&W Photography Group",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4929654629093fc60eb9"
+  },
+  "eventid": 16,
+  "title": "Children Jazz Dance Class",
+  "venue": {
+    "$oid": "657a4611654629093fc60e9e"
+  },
+  "date": "2023-12-31T12:00:00.000Z",
+  "description": "Class",
+  "presenter": "Hibiscus Group",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a492f654629093fc60eba"
+  },
+  "eventid": 17,
+  "title": "Ballroom Dance Class",
+  "venue": {
+    "$oid": "657a4611654629093fc60e9e"
+  },
+  "date": "2023-12-18T14:30:00.000Z",
+  "description": "Class",
+  "presenter": "Youth Dancesport Association",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4934654629093fc60ebb"
+  },
+  "eventid": 18,
+  "title": "Children Latin Dance Class",
+  "venue": {
+    "$oid": "657a4611654629093fc60e9e"
+  },
+  "date": "2023-12-29T19:30:00.000Z",
+  "description": "Class",
+  "presenter": "Sasha Dancing Association",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4939654629093fc60ebc"
+  },
+  "eventid": 19,
+  "title": "Gu Zheng Workshop",
+  "venue": {
+    "$oid": "657a46bd654629093fc60ea1"
+  },
+  "date": "2023-12-17T09:30:00.000Z",
+  "description": "Workshop",
+  "presenter": "Tuen Mun Gu Zheng Arts Association",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a493e654629093fc60ebd"
+  },
+  "eventid": 20,
+  "title": "Speech Competition",
+  "venue": {
+    "$oid": "657a46bd654629093fc60ea1"
+  },
+  "date": "2023-12-27T14:30:00.000Z",
+  "description": "Competition",
+  "presenter": "Hong Kong Schools Music and Speech Association",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4944654629093fc60ebe"
+  },
+  "eventid": 21,
+  "title": "Cantonese Operatic Songs Class",
+  "venue": {
+    "$oid": "657a46bd654629093fc60ea1"
+  },
+  "date": "2023-12-30T09:30:00.000Z",
+  "description": "Class",
+  "presenter": "Tuen Ngai Confederation Chinese Orchestra",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4948654629093fc60ebf"
+  },
+  "eventid": 22,
+  "title": "Ballroom Dance Class - Presented by Amazing Grace",
+  "venue": {
+    "$oid": "657a46fe654629093fc60ea3"
+  },
+  "date": "2023-12-27T14:30:00.000Z",
+  "description": "Class",
+  "presenter": "Amazing Grace",
+  "price": 90
+},
+{
+  "_id": {
+    "$oid": "657a494d654629093fc60ec0"
+  },
+  "eventid": 23,
+  "title": "Dance Training Course",
+  "venue": {
+    "$oid": "657a46fe654629093fc60ea3"
+  },
+  "date": "2023-12-31T14:30:00.000Z",
+  "description": "Class",
+  "presenter": "Ballroom Dance Promotion Society",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4951654629093fc60ec1"
+  },
+  "eventid": 24,
+  "title": "Music Training Class",
+  "venue": {
+    "$oid": "657a46fe654629093fc60ea3"
+  },
+  "date": "2023-12-31T14:30:00.000Z",
+  "description": "Class",
+  "presenter": "Hong Kong Post-Modern Orchestra Association",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4957654629093fc60ec2"
+  },
+  "eventid": 25,
+  "title": "Cantonese Opera Excerpts Workshop",
+  "venue": {
+    "$oid": "657a471c654629093fc60ea4"
+  },
+  "date": "2023-12-30T14:30:00.000Z",
+  "description": "Workshop",
+  "presenter": "Culture and Arts Cantonese Opera Cantonese Opera Association",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a495b654629093fc60ec3"
+  },
+  "eventid": 26,
+  "title": "Dance Training Class",
+  "venue": {
+    "$oid": "657a471c654629093fc60ea4"
+  },
+  "date": "2023-12-18T19:30:00.000Z",
+  "description": "Class",
+  "presenter": "Andy Lee Dance Studio",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a4961654629093fc60ec4"
+  },
+  "eventid": 27,
+  "title": "Social Dance",
+  "venue": {
+    "$oid": "657a471c654629093fc60ea4"
+  },
+  "date": "2024-12-28T14:30:00.000Z",
+  "description": "Class",
+  "presenter": "Hong Kong Ballroom Dance Institution",
+  "price": 40
+},
+{
+  "_id": {
+    "$oid": "657a4966654629093fc60ec5"
+  },
+  "eventid": 28,
+  "title": "Cantonese Opera Class",
+  "venue": {
+    "$oid": "657a4772654629093fc60ea5"
+  },
+  "date": "2023-12-28T12:00:00.000Z",
+  "description": "Class",
+  "presenter": "Hang Fei Music Centre",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a496a654629093fc60ec6"
+  },
+  "eventid": 29,
+  "title": "Cantonese Opera Training Class",
+  "venue": {
+    "$oid": "657a4772654629093fc60ea5"
+  },
+  "date": "2023-12-29T12:00:00.000Z",
+  "description": "OPERA",
+  "presenter": "Melody Cantonese Opera Laboratory",
+  "price": 0
+},
+{
+  "_id": {
+    "$oid": "657a496f654629093fc60ec7"
+  },
+  "eventid": 30,
+  "title": "antonese Operatic Song Workshop",
+  "venue": {
+    "$oid": "657a4772654629093fc60ea5"
+  },
+  "date": "2023-12-18T14:30:00.000Z",
+  "description": "Class",
+  "presenter": "Edelweiss Chinese Musical Art Workshop",
+  "price": 0
+}]
