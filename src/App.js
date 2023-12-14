@@ -58,7 +58,7 @@ class App extends React.Component{
   render(){
       return(
           <>
-              
+              <h1>CSCI 2720 Group Project 1155160407</h1>
               <BrowserRouter>
                 <nav style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f5f5f5', padding: '10px' }}>
                   
