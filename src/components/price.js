@@ -24,7 +24,7 @@ const SearchPrice = () => {
 
   return (
     <>
-      <h2 class = "bg-info">Cultural events whose price under ≤ $100</h2>
+      <h2>Cultural events whose price under ≤ $100</h2>
       <table className="event-table">
         <thead>
           <tr>

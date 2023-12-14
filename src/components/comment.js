@@ -19,7 +19,7 @@ const UserComment = () => {
     };
   return (
     <>
-    <h1 class = "bg-info">User Comments</h1>
+    <h1>User Comments</h1>
       <div>
       <table className="event-table">
         <thead>
