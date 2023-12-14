@@ -285,7 +285,7 @@ db.once('open', function () {
     }
   });
 
-  //admin create user
+  // admin create user
   app.post('/createuser', async (req, res) => {
     try {
       const username = req.body.username;
@@ -308,12 +308,45 @@ db.once('open', function () {
         await newUser.save();
       }
   
-      res.status(200).send('User created/updated successfully');
+      res.status(200).send('User created/update successfully:' + username);
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');
     }
   });
+
+  // read user
+  app.get('/api/read', async (req, res) => {
+    try {
+      // Assuming you have a User model/schema defined
+      const users = await User.find().exec();
+  
+      res.status(200).json(users);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  // delete user
+  app.post('/deleteuser', async (req, res) => {
+    try {
+      const username = req.body.username;
+  
+      const user = await User.findOne({ username: username }).exec();
+  
+      if (!user) {
+        res.status(404).send('User not found');
+      } else {
+        await User.deleteOne({ username: username });
+        res.status(200).send('User deleted successfully: ' + username);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
 
   //End of DB
 })
