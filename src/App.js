@@ -13,7 +13,7 @@ import axios from 'axios';
 
 import Table from './components/home.js';
 import './components/home.css';
-
+import SearchPrice from './components/price.js';
 const Home = () => (
   <div>
     <Table />
@@ -47,7 +47,7 @@ const Favourite = () => (
 );
 const Price = () => (
   <div>
-    
+    <SearchPrice />
   </div>
 );
 const Login = () => (
