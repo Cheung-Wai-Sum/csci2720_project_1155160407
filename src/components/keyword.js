@@ -26,14 +26,14 @@ const SearchKeyword = () => {
       <h2>Search Locations by keywords in the name</h2>
       <p>e.g Hong Kong or Tuen Mun or Kwai Tsing</p>
       
-      <input className="form-control border" style={{ width: '400px'}}
+      <input className="form-control" style={{ width: '400px'}}
         type="text"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
         placeholder="Enter keyword"
       />
       
-      <button style={{ fontSize: '15px' }} onClick={handleSearch}>Search</button >
+      <button class="btn btn-primary" onClick={handleSearch}>Search</button >
     </div>
       {locationResults.length > 0 ? (
         <>

@@ -44,12 +44,12 @@ const Userfavourite = () => {
     <h2>Add New Favourite Location</h2>
         <form id="favouriteadd" action="http://localhost:3000/addfavourite" method="POST">
           <label htmlFor="userName">Username:</label>
-          <input type="text" id="userName" name="userName" required placeholder='Input text'/><br /><br />
+          <input className="form-control" type="text" id="userName" name="userName" required placeholder='Input text'/><br /><br />
 
           <label htmlFor="locationID">Location ID:</label>
-          <input type="number" id="locationID" name="locationID" required placeholder='Input text'/><br /><br />
+          <input className="form-control" type="number" id="locationID" name="locationID" required placeholder='Input text'/><br /><br />
 
-          <input type="submit" value="Add new Favourite Location" />
+          <input class="btn btn-primary" type="submit" value="Add new Favourite Location" />
         </form>
 
     </div>

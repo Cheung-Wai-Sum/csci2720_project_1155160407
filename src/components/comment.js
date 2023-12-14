@@ -46,15 +46,15 @@ const UserComment = () => {
     <h2>Add New Comment</h2>
         <form id="add" action="http://localhost:3000/addcomment" method="POST">
           <label htmlFor="userName">Username:</label>
-          <input type="text" id="userName" name="userName" required placeholder='Input text'/><br /><br />
+          <input className="form-control" type="text" id="userName" name="userName" required placeholder='Input text'/><br /><br />
 
           <label htmlFor="userComment">Comment:</label>
-          <input type="text" id="userComment" name="userComment" required placeholder='Input text'/><br /><br />
+          <input className="form-control" type="text" id="userComment" name="userComment" required placeholder='Input text'/><br /><br />
 
           <label htmlFor="locationID">Location ID:</label>
-          <input type="text" id="locationID" name="locationID" required placeholder='Input text'/><br /><br />
+          <input className="form-control" type="text" id="locationID" name="locationID" required placeholder='Input text'/><br /><br />
 
-          <input type="submit" value="Add new Comment" />
+          <input class="btn btn-primary" type="submit" value="Add new Comment" />
         </form>
     </div>
 
