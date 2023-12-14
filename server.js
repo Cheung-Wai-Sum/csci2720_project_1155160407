@@ -74,6 +74,24 @@ db.once('open', function () {
     },
 
   });
+  // login
+  const UserSchema = mongoose.Schema({
+    username: {
+      type: String,
+      required: true,
+      unique: true,
+    },
+    password: {
+      type: String,
+      required: true,
+    },
+    permission: {
+      type: String,
+      required: true
+    }
+  });
+
+  const User = mongoose.model("users", UserSchema);
   const Event = mongoose.model("events", EventSchema);
   const Venue = mongoose.model("venues", VenueSchema);
 
@@ -239,6 +257,33 @@ db.once('open', function () {
     });
 
   });
+
+  // Login request
+  app.post('/api/login', async (req, res) => {
+    const { username, password } = req.body;
+
+    try {
+      const user = await User.findOne({username: username});
+
+      if (user) {
+        // If the username exists, compare the passwords
+        if (user.password === password) {
+          // If the passwords match, send a success response
+          return res.status(200).json({ success: true, message: 'Login successful' });
+        } else {
+          // If the passwords don't match, send an error response
+          return res.status(401).json({ success: false, message: 'Invalid password' });
+        }
+      } else {
+        // If the username doesn't exist, send an error response
+        return res.status(401).json({ success: false, message: 'User not found' });
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+  });
+
   //End of DB
 })
 // listen to port 3000
