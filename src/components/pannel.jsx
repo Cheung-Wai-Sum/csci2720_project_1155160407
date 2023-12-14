@@ -71,6 +71,28 @@ const Pannel = () => {
 
         </form>
       </div>
+
+      <h1>User information Management</h1>
+
+      <div>
+        <h2>Create New User</h2>
+        <form id="createuser" action="http://localhost:3000/createuser" method="POST">
+
+        <label htmlFor="username">User Name:</label>
+        <input type="text" id="username" name="username" required placeholder='Input text'/><br /><br />
+
+        <label htmlFor="userpw">User password:</label>
+        <input type="number" id="userpw" name="userpw" required placeholder='Input number'/><br /><br />
+
+        <label htmlFor="userpermission">User Permission: (admin or user)</label>
+        <input type="text" id="userpermission" name="userpermission" required placeholder='Input text'/><br /><br />
+
+        <input type="submit" value="Create New User" />
+        </form>
+      </div>
+
+
+
     </>
   );
 };

@@ -268,8 +268,9 @@ db.once('open', function () {
       if (user) {
         // If the username exists, compare the passwords
         if (user.password === password) {
-          // If the passwords match, send a success response
-          return res.status(200).json({ success: true, message: 'Login successful' });
+          const permission = user.permission
+          // If the passwords match, send a success response and the permission type
+          return res.status(200).json({ success: true, message: 'Login successful', permission});
         } else {
           // If the passwords don't match, send an error response
           return res.status(401).json({ success: false, message: 'Invalid password' });
@@ -281,6 +282,36 @@ db.once('open', function () {
     } catch (error) {
       console.error('Error during login:', error);
       return res.status(500).json({ success: false, message: 'Internal server error' });
+    }
+  });
+
+  //admin create user
+  app.post('/createuser', async (req, res) => {
+    try {
+      const username = req.body.username;
+      const userpw = req.body.userpw;
+      const userpermission = req.body.userpermission;
+
+      const user = await User.findOne({ username: username }).exec();
+  
+      if (user) {
+        user.password = userpw;
+        user.permission = userpermission;
+        await user.save();
+      } else {
+        // User does not exist, create a new user
+        const newUser = new User({
+          username: username,
+          password: userpw,
+          permission: userpermission,
+        });
+        await newUser.save();
+      }
+  
+      res.status(200).send('User created/updated successfully');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
     }
   });
 
