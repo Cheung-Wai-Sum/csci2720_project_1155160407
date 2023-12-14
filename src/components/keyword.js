@@ -23,6 +23,7 @@ const SearchKeyword = () => {
   return (
     <>
       <h2>Search Locations by keywords in the name</h2>
+      <p>e.g Hong Kong or Tuen Mun or Kwai Tsing</p>
       <input style={{ width: '400px' }}
         type="text"
         value={keyword}

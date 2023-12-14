@@ -12,6 +12,7 @@ import './components/home.css';
 import SearchKeyword from './components/keyword.js';
 import SearchPrice from './components/price.js';
 import Sorting from './components/sort.js';
+import Pannel from './components/pannel.jsx';
 const Home = () => (
   <div>
     <Table />
@@ -48,8 +49,9 @@ const Price = () => (
     <SearchPrice />
   </div>
 );
-const Login = () => (
+const Admin = () => (
   <div>
+    <Pannel/>
   </div>
 );
 
@@ -69,10 +71,13 @@ class App extends React.Component{
                       <Link to="/number" >Number of Event in a Location</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/location" >Location</Link>
+                      <Link to="/price" >Cultural Event(Price lower than $100)</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/search" >Search location by keywords</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/location" >Location</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/separate" >Separate</Link>
@@ -80,11 +85,9 @@ class App extends React.Component{
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/favourite" >Favourite</Link>
                     </li>
+
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/price" >Cultural Event(Price lower than $100)</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/login" >Login</Link>
+                      <Link to="/admin" >Admin pannel</Link>
                     </li>
                   </ul>
                 </nav>
@@ -97,7 +100,7 @@ class App extends React.Component{
                   <Route path="/separate" element={<Separate />} />
                   <Route path="/favourite" element={<Favourite />} />
                   <Route path="/price" element={<Price />} />
-                  <Route path="/login" element={<Login />} />
+                  <Route path="/admin" element={<Admin />} />
                 </Routes>
               </BrowserRouter>
 

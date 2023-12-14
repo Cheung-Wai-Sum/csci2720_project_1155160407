@@ -136,6 +136,65 @@ db.once('open', function () {
     }
   });
 
+  // admin create new event
+  app.post('/create', async (req, res) => {
+    try {
+        const eventTitle = req.body.eventTitle;
+        const venueID = parseInt(req.body.venueID);
+        const eventDate = req.body.eventDate;
+        const eventDescription = req.body.eventDescription;
+        const Presenter = req.body.Presenter;
+        const Price = parseInt(req.body.Price);
+
+  
+      // Retrieve the maximum event ID from the database
+      const maxEvent = await Event.findOne().sort({ eventid: -1 }).exec();
+      let largestEventId = maxEvent ? maxEvent.eventid + 1 : 1;
+
+      // Find the location data
+      const venue = await Venue.findOne({ vid: venueID }).exec();
+
+      if (!venue) {
+        res.status(406).set('Content-Type', 'text/plain').send('Invalid location ID');
+        return;
+      }
+  
+      // Create a new event
+      const newEvent = new Event({
+        eventid: largestEventId,
+        title: eventTitle,
+        venue: venue,
+        date: eventDate,
+        description: eventDescription,
+        presenter: Presenter,
+        price: Price,
+      });
+      await newEvent.save();
+
+      // respond to the user with the URL of the created event
+      res.status(406).set('Content-Type', 'text/plain').send('Insert new Event successfully Event ID' + largestEventId);
+    } catch (error) {
+      console.log('Error occurred while creating the event:', error);
+      res.status(500).send('Failed to create event');
+    }
+  });
+
+  // admin delete event
+  app.post('/delete', async (req, res) => {
+    try {
+      const eventId = parseInt(req.body.eventID);
+      const result = await Event.deleteOne({ eventid: eventId });
+      console.log(result);
+      if (result.deletedCount === 0) {
+        res.status(500).send('Failed to delete event');
+      } else {
+        res.status(406).set('Content-Type', 'text/plain').send('Delete Event successfully Event ID' + eventId);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
 
   //End of DB
 })
