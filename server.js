@@ -110,9 +110,22 @@ db.once('open', function () {
   
   app.get('/api/venue', async (req, res) => {
     try {
-      const venues = await Venue.find();
-      res.json("123" + venues);
-      console.log(venues);
+      const keyword = req.query.keyword;
+      const venues = await Venue.find({
+        location: { $regex: new RegExp(keyword, 'i') }, // Case-insensitive search
+      });
+  
+      if (venues.length === 0) {
+        res.status(404).send('No locations found');
+      } else {
+        const formattedVenues = venues.map((venue) => {
+          return {
+            vid: venue.vid,
+            location: venue.location,
+          };
+        });
+        res.status(200).json(formattedVenues);
+      }
     } catch (err) {
       console.error('Error retrieving venue data:', err);
       res.status(500).send('Internal Server Error');

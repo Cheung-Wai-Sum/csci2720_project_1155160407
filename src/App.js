@@ -13,6 +13,7 @@ import axios from 'axios';
 
 import Table from './components/home.js';
 import './components/home.css';
+import SearchKeyword from './components/keyword.js';
 import SearchPrice from './components/price.js';
 const Home = () => (
   <div>
@@ -35,6 +36,7 @@ const Location = () => (
 
 const Search = () => (
   <div>
+    <SearchKeyword />
   </div>
 );
 const Separate = () => (
