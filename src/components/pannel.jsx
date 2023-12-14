@@ -22,7 +22,7 @@ const Pannel = () => {
   return (
     <>
     
-    <h1>Admin pannel</h1>
+    <h1>Event(CRUD)</h1>
       <div>
         <h2>Create New Event</h2>
         <form id="create" action="http://localhost:3000/create" method="POST">
@@ -89,9 +89,8 @@ const Pannel = () => {
         </form>
       </div>
 
-      <h1>User information Management</h1>
+      <h1>User information(CRUD)</h1>
       <div>
-      <h1>User Table</h1>
       <table className="event-table">
         <thead>
           <tr>
@@ -114,7 +113,7 @@ const Pannel = () => {
 
       <div>
         <h2>Create New User or Update user password</h2>
-        <h2>(For update password, Enter existing username with new pw)</h2>
+        <p>(For update password, Enter existing username with new pw)</p>
         <form id="createuser" action="http://localhost:3000/createuser" method="POST">
 
         <label htmlFor="username">User Name:</label>

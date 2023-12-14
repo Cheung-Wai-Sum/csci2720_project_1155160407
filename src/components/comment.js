@@ -19,9 +19,8 @@ const UserComment = () => {
     };
   return (
     <>
-    <h1>User Comment</h1>
+    <h1>User Comments</h1>
       <div>
-      <h1>Table</h1>
       <table className="event-table">
         <thead>
           <tr>

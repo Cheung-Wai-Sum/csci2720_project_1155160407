@@ -16,6 +16,7 @@ import Pannel from './components/pannel.jsx';
 import Login from './components/loginPage.js';
 import UserComment from './components/comment.js';
 import Userfavourite from './components/favourite.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => (
   <div>
@@ -66,38 +67,43 @@ class App extends React.Component{
   render(){
       return(
           <>
-              <h1>CSCI 2720 Group Project Cultural Event Platform</h1>
+              <h1 style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
+                CSCI 2720 Group Project Cultural Event Platform
+              </h1>
               <BrowserRouter>
-                <nav style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f5f5f5', padding: '10px' }}>
-                  
-                  <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex' }}>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/" >Home</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/number" >Number of Event in a Location</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/price" >Cultural Event(Price lower than $100)</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/search" >Search location by keywords</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/location" >Location</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/comment" >Comment</Link>
-                    </li>
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/favourite" >Favourite</Link>
-                    </li>
-
-                    <li style={{ marginRight: '10px' }}>
-                      <Link to="/admin" >Admin pannel</Link>
-                    </li>
-                  </ul>
-                </nav>
+              <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container">
+              <Link className="navbar-brand" to="/">Home</Link>
+              <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div className="collapse navbar-collapse" id="navbarNav">
+                <ul className="navbar-nav">
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/number">Number of Event in a Location</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/price">Cultural Event (Price lower than $100)</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/search">Search location by keywords</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/location">Location</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/comment">Comment</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/favourite">Favourite</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/admin">Admin Panel</Link>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
 
                 <Routes>
                   <Route path="/" element={<Home />} />

@@ -19,9 +19,8 @@ const Userfavourite = () => {
     };
   return (
     <>
-    <h1>User Favourite Location</h1>
+    <h1>User Favourite Locations</h1>
       <div>
-      <h1>Table</h1>
       <table className="event-table">
         <thead>
           <tr>
