@@ -172,7 +172,7 @@ db.once('open', function () {
       await newEvent.save();
 
       // respond to the user with the URL of the created event
-      res.status(406).set('Content-Type', 'text/plain').send('Insert new Event successfully Event ID' + largestEventId);
+      res.status(406).set('Content-Type', 'text/plain').send('Insert new Event successfully Event ID:' + largestEventId);
     } catch (error) {
       console.log('Error occurred while creating the event:', error);
       res.status(500).send('Failed to create event');
@@ -188,7 +188,7 @@ db.once('open', function () {
       if (result.deletedCount === 0) {
         res.status(500).send('Failed to delete event');
       } else {
-        res.status(406).set('Content-Type', 'text/plain').send('Delete Event successfully Event ID' + eventId);
+        res.status(406).set('Content-Type', 'text/plain').send('Delete Event successfully Event ID:' + eventId);
       }
     } catch (error) {
       console.error(error);
@@ -196,6 +196,49 @@ db.once('open', function () {
     }
   });
 
+  // admin update event
+  app.post('/update', async (req, res) => {
+    const eventId = req.body.eventID;
+    const eventTitle = req.body.eventTitle;
+    const venueId = req.body.venueID;
+    const eventDate = req.body.eventDate;
+    const eventDescription = req.body.eventDescription;
+    const Presenter = req.body.Presenter;
+    const Price = req.body.Price;
+    let id;
+    console.log(req.body);
+    if (!eventId) {
+      res.status(404).set('Content-Type', 'text/plain').send('"Event not found"');
+      return;
+    }
+    Venue.findOne({vid: venueId})
+    .then((data) => {
+        id = data._id;
+
+        Event
+        .findOneAndUpdate({ eventid: {$eq: eventId} },
+                        {$set: {
+                           title: eventTitle,
+                           date: eventDate,
+                           description: eventDescription,
+                           presenter: Presenter,
+                           price: Price,
+                           venue: id,
+                           new: true,
+                        },})
+        .then((event) => {
+          res.status(406).set('Content-Type', 'text/plain').send('Update Event successfully Event ID:' + eventId);
+        })
+        .catch((error) => {
+          console.log('Failed to load your event:', error);
+          res.status(500).set('Content-Type', 'text/plain').send('"Failed to load the event"');
+        });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+  });
   //End of DB
 })
 // listen to port 3000
