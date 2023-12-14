@@ -1,5 +1,11 @@
+import ReactDOM from "react-dom/client";
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Link,
+  } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
 
@@ -10,57 +16,63 @@ const Home = () => (
   </div>
 );
 
-const About = () => (
+const List = () => (
   <div>
-    <h2>About</h2>
-    <p>This is the about page.</p>
+    <h2>List</h2>
+    <p>This is the List page.</p>
   </div>
 );
 
-const Services = () => (
+const Location = () => (
   <div>
-    <h2>Services</h2>
-    <p>Here are our services.</p>
+    <h2>Location</h2>
+    <p>Here are our Location.</p>
   </div>
 );
 
-const Contact = () => (
+const Search = () => (
   <div>
-    <h2>Contact</h2>
-    <p>Contact us here.</p>
+    <h2>Search</h2>
+    <p>Search.</p>
   </div>
 );
 
-function App() {
-  return (
-    <Router>
-      <div className="App">
-        <nav>
-          <ul className="navbar">
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/services">Services</Link>
-            </li>
-            <li>
-              <Link to="/contact">Contact</Link>
-            </li>
-          </ul>
-        </nav>
+class App extends React.Component{
+  render(){
+      return(
+          <>
+              
+              <BrowserRouter>
+                <nav style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f5f5f5', padding: '10px' }}>
+                  
+                  <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex' }}>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/" >Home</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/list" >List</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/location" >Location</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/search" >Search</Link>
+                    </li>
+                  </ul>
+                </nav>
 
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/services" component={Services} />
-          <Route path="/contact" component={Contact} />
-        </Switch>
-      </div>
-    </Router>
-  );
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/list" element={<List />} />
+                  <Route path="/location" element={<Location />} />
+                  <Route path="/search" element={<Search />} />
+                </Routes>
+              </BrowserRouter>
+
+              {/* <Gallery /> */}
+          </>
+      )
+  }
 }
 
 export default App;
