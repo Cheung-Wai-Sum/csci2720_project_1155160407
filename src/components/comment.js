@@ -42,7 +42,7 @@ const UserComment = () => {
         </tbody>
       </table>
     </div>
-    
+    <div className="border border-3 border-dark rounded">
     <h2>Add New Comment</h2>
         <form id="add" action="http://localhost:3000/addcomment" method="POST">
           <label htmlFor="userName">Username:</label>
@@ -56,7 +56,7 @@ const UserComment = () => {
 
           <input type="submit" value="Add new Comment" />
         </form>
-
+    </div>
 
     </>
   );

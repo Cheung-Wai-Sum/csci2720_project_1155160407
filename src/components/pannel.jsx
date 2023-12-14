@@ -22,8 +22,8 @@ const Pannel = () => {
   return (
     <>
     
-    <h1>Event(CRUD)</h1>
-      <div>
+    <h2 class="font-italic">Event Admin Dashboard</h2>
+      <div className="border border-3 border-dark rounded">
         <h2>Create New Event</h2>
         <form id="create" action="http://localhost:3000/create" method="POST">
           <label htmlFor="eventTitle">Event Title:</label>
@@ -48,7 +48,7 @@ const Pannel = () => {
         </form>
       </div>
 
-      <div>
+      <div className="border border-3 border-dark rounded">
         <h2>Delete Event</h2>
         <form id="create" action="http://localhost:3000/delete" method="POST">
 
@@ -59,7 +59,7 @@ const Pannel = () => {
         </form>
       </div>
 
-      <div>
+      <div className="border border-3 border-dark rounded">
         <h2>Update Event</h2>
         <form id="update" action="http://localhost:3000/update" method='POST'>
 
@@ -89,8 +89,9 @@ const Pannel = () => {
         </form>
       </div>
 
-      <h1>User information(CRUD)</h1>
-      <div>
+      
+      <div className="border border-3 border-dark rounded">
+      <h1>User information Dashboard</h1>
       <table className="event-table">
         <thead>
           <tr>
@@ -111,9 +112,9 @@ const Pannel = () => {
       </table>
     </div>
 
-      <div>
+      <div className="border border-3 border-dark rounded">
         <h2>Create New User or Update user password</h2>
-        <p>(For update password, Enter existing username with new pw)</p>
+        <p>(For update password, Enter existing username with new password)</p>
         <form id="createuser" action="http://localhost:3000/createuser" method="POST">
 
         <label htmlFor="username">User Name:</label>
@@ -129,7 +130,7 @@ const Pannel = () => {
         </form>
       </div>
 
-      <div>
+      <div className="border border-3 border-dark rounded">
         <h2>Delete User</h2>
         <form id="deleteuser" action="http://localhost:3000/deleteuser" method="POST">
 

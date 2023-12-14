@@ -18,11 +18,8 @@ const Table = () => {
 
   return (
     <>
-    <h1>
-      Home page
-    </h1>
     <h2>
-      List of Cultural Event
+      List of Cultural Events
     </h2>
     <table className="event-table">
       <thead>

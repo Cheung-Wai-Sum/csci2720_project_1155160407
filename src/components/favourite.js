@@ -40,7 +40,7 @@ const Userfavourite = () => {
         </tbody>
       </table>
     </div>
-    
+    <div className="border border-3 border-dark rounded">
     <h2>Add New Favourite Location</h2>
         <form id="favouriteadd" action="http://localhost:3000/addfavourite" method="POST">
           <label htmlFor="userName">Username:</label>
@@ -52,7 +52,7 @@ const Userfavourite = () => {
           <input type="submit" value="Add new Favourite Location" />
         </form>
 
-
+    </div>
     </>
   );
 };
