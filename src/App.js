@@ -59,7 +59,7 @@ class App extends React.Component{
   render(){
       return(
           <>
-              <h1>CSCI 2720 Group Project 1155160407</h1>
+              <h1>CSCI 2720 Group Project Cultural Event Platform</h1>
               <BrowserRouter>
                 <nav style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f5f5f5', padding: '10px' }}>
                   
@@ -83,7 +83,7 @@ class App extends React.Component{
                       <Link to="/favourite" >Favourite</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/price" >Search for event(lower than $100)</Link>
+                      <Link to="/price" >Cultural Event(Price lower than $100)</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/login" >Login</Link>

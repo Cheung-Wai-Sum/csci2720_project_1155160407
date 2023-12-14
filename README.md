@@ -1,4 +1,6 @@
-### test kelvin
+### MongoDB database setup
+The dataset of  collection "events" "venue" is inside the folder of database_setup
+You need to import csci2720project.events.json csci2720project.venues.json to the Local MongoDB database.
 
 ## 1.Open a terminal to Run the Local Server
 
@@ -8,12 +10,8 @@
 
 ### `npm install`
 
-## 3. Open your git branch
 
-### `git branch dev_(name)`
-### `git checkout dev_(name)`
-
-## In the terminal run
+## 3. In the terminal run
 
 In the project directory, you can run:
 
@@ -24,4 +22,9 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 The page will reload when you make changes.\
 You may also see any lint errors in the console.
+
+## (For Group member) Open your git branch
+
+### `git branch dev_(name)`
+### `git checkout dev_(name)`
 

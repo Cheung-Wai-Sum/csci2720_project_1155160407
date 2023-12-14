@@ -22,7 +22,7 @@ const Table = () => {
       Home page
     </h1>
     <h2>
-      List of Event
+      List of Cultural Event
     </h2>
     <table className="event-table">
       <thead>
