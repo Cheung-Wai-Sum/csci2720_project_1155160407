@@ -34,8 +34,23 @@ const Location = () => (
 
 const Search = () => (
   <div>
-    <h2>Search</h2>
-    <p>Search.</p>
+  </div>
+);
+const Separate = () => (
+  <div>
+  </div>
+);
+const Favourite = () => (
+  <div>
+  </div>
+);
+const Price = () => (
+  <div>
+    
+  </div>
+);
+const Login = () => (
+  <div>
   </div>
 );
 
@@ -60,6 +75,18 @@ class App extends React.Component{
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/search" >Search</Link>
                     </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/separate" >Separate</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/favourite" >Favourite</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/price" >Search for event(lower than $100)</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/login" >Login</Link>
+                    </li>
                   </ul>
                 </nav>
 
@@ -68,6 +95,10 @@ class App extends React.Component{
                   <Route path="/list" element={<List />} />
                   <Route path="/location" element={<Location />} />
                   <Route path="/search" element={<Search />} />
+                  <Route path="/separate" element={<Separate />} />
+                  <Route path="/favourite" element={<Favourite />} />
+                  <Route path="/price" element={<Price />} />
+                  <Route path="/login" element={<Login />} />
                 </Routes>
               </BrowserRouter>
 
