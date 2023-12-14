@@ -120,7 +120,7 @@ db.once('open', function () {
   });
 
 
-  //End of DB //
+  //End of DB
 })
 // listen to port 3000
 const server = app.listen(3000);
