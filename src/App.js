@@ -13,6 +13,8 @@ import SearchKeyword from './components/keyword.js';
 import SearchPrice from './components/price.js';
 import Sorting from './components/sort.js';
 import Pannel from './components/pannel.jsx';
+import Login from "./components/loginPage.js";
+
 const Home = () => (
   <div>
     <Table />
@@ -54,6 +56,7 @@ const Admin = () => (
     <Pannel/>
   </div>
 );
+
 
 class App extends React.Component{
   render(){
@@ -101,6 +104,7 @@ class App extends React.Component{
                   <Route path="/favourite" element={<Favourite />} />
                   <Route path="/price" element={<Price />} />
                   <Route path="/admin" element={<Admin />} />
+                  <Route path="/login" element={<Login />} />
                 </Routes>
               </BrowserRouter>
 
