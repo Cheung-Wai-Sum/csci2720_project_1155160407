@@ -15,16 +15,16 @@ import Table from './components/home.js';
 import './components/home.css';
 import SearchKeyword from './components/keyword.js';
 import SearchPrice from './components/price.js';
+import Sorting from './components/sort.js';
 const Home = () => (
   <div>
     <Table />
   </div>
 );
 
-const List = () => (
+const Sort = () => (
   <div>
-    <h2>List</h2>
-    <p>This is the List page.</p>
+    <Sorting />
   </div>
 );
 
@@ -70,13 +70,13 @@ class App extends React.Component{
                       <Link to="/" >Home</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/list" >List</Link>
+                      <Link to="/sort" >Sorting</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/location" >Location</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
-                      <Link to="/search" >Search</Link>
+                      <Link to="/search" >Search location by keywords</Link>
                     </li>
                     <li style={{ marginRight: '10px' }}>
                       <Link to="/separate" >Separate</Link>
@@ -95,7 +95,7 @@ class App extends React.Component{
 
                 <Routes>
                   <Route path="/" element={<Home />} />
-                  <Route path="/list" element={<List />} />
+                  <Route path="/sort" element={<Sort />} />
                   <Route path="/location" element={<Location />} />
                   <Route path="/search" element={<Search />} />
                   <Route path="/separate" element={<Separate />} />
