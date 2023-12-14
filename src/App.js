@@ -1,38 +1,33 @@
-import ReactDOM from "react-dom/client";
 import React from 'react';
 import {
   BrowserRouter,
   Routes,
   Route,
   Link,
-} from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
-import { useEffect, useState } from 'react';
-import axios from 'axios';
+  } from 'react-router-dom';
+
+
 import Table from './components/home.js';
 import './components/home.css';
 import SearchKeyword from './components/keyword.js';
 import SearchPrice from './components/price.js';
-import Login from "./components/loginPage.js";
-
-
+import Sorting from './components/sort.js';
+import Pannel from './components/pannel.jsx';
 const Home = () => (
   <div>
     <Table />
   </div>
 );
 
-const List = () => (
+const Number = () => (
   <div>
-    <h2>List</h2>
-    <p>This is the List page.</p>
+    <Sorting />
   </div>
 );
 
 const Location = () => (
   <div>
-
+    
   </div>
 );
 
@@ -54,55 +49,64 @@ const Price = () => (
     <SearchPrice />
   </div>
 );
+const Admin = () => (
+  <div>
+    <Pannel/>
+  </div>
+);
 
-class App extends React.Component {
-  render() {
-    return (
-      <>
-        <h1>CSCI 2720 Group Project Cultural Event Platform</h1>
-        <BrowserRouter>
-          <nav style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f5f5f5', padding: '10px' }}>
+class App extends React.Component{
+  render(){
+      return(
+          <>
+              <h1>CSCI 2720 Group Project Cultural Event Platform</h1>
+              <BrowserRouter>
+                <nav style={{ display: 'flex', justifyContent: 'space-between', backgroundColor: '#f5f5f5', padding: '10px' }}>
+                  
+                  <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex' }}>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/" >Home</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/number" >Number of Event in a Location</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/price" >Cultural Event(Price lower than $100)</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/search" >Search location by keywords</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/location" >Location</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/separate" >Separate</Link>
+                    </li>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/favourite" >Favourite</Link>
+                    </li>
 
-            <ul style={{ listStyle: 'none', padding: '0', margin: '0', display: 'flex' }}>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/" >Home</Link>
-              </li>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/list" >List</Link>
-              </li>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/location" >Location</Link>
-              </li>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/search" >Search</Link>
-              </li>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/separate" >Separate</Link>
-              </li>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/favourite" >Favourite</Link>
-              </li>
-              <li style={{ marginRight: '10px' }}>
-                <Link to="/price" >Cultural Event(Price lower than $100)</Link>
-              </li>
-            </ul>
-          </nav>
+                    <li style={{ marginRight: '10px' }}>
+                      <Link to="/admin" >Admin pannel</Link>
+                    </li>
+                  </ul>
+                </nav>
 
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/list" element={<List />} />
-            <Route path="/location" element={<Location />} />
-            <Route path="/search" element={<Search />} />
-            <Route path="/separate" element={<Separate />} />
-            <Route path="/favourite" element={<Favourite />} />
-            <Route path="/price" element={<Price />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </BrowserRouter>
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/number" element={<Number />} />
+                  <Route path="/location" element={<Location />} />
+                  <Route path="/search" element={<Search />} />
+                  <Route path="/separate" element={<Separate />} />
+                  <Route path="/favourite" element={<Favourite />} />
+                  <Route path="/price" element={<Price />} />
+                  <Route path="/admin" element={<Admin />} />
+                </Routes>
+              </BrowserRouter>
 
-        {/* <Gallery /> */}
-      </>
-    )
+              {/* <Gallery /> */}
+          </>
+      )
   }
 }
 

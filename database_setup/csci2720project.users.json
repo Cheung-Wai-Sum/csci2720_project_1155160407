@@ -1,0 +1,16 @@
+[{
+  "_id": {
+    "$oid": "657b2c4c47953d3696aabf64"
+  },
+  "username": "admin",
+  "password": "test1234",
+  "permission": "admin"
+},
+{
+  "_id": {
+    "$oid": "657b2c4c47953d3696aabf65"
+  },
+  "username": "user",
+  "password": "test1234",
+  "permission": "user"
+}]

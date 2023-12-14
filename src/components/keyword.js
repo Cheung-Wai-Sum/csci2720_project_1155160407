@@ -4,30 +4,36 @@ import axios from 'axios';
 const SearchKeyword = () => {
   const [keyword, setKeyword] = useState('');
   const [locationResults, setLocationResults] = useState([]);
+  const [error, setError] = useState('');
 
   const handleSearch = () => {
     axios
       .get(`http://localhost:3000/api/venue?keyword=${keyword}`)
       .then((response) => {
         setLocationResults(response.data);
+        setError('');
       })
       .catch((error) => {
         console.error('Error fetching location data:', error);
+        setLocationResults([]);
+        setError('No locations found');
       });
   };
 
   return (
     <>
-      <h2>Search Locations</h2>
-      <input
+      <h2>Search Locations by keywords in the name</h2>
+      <p>e.g Hong Kong or Tuen Mun or Kwai Tsing</p>
+      <input style={{ width: '400px' }}
         type="text"
         value={keyword}
         onChange={(e) => setKeyword(e.target.value)}
         placeholder="Enter keyword"
       />
-      <button onClick={handleSearch}>Search</button>
+      <div></div>
+      <button style={{ fontSize: '15px' }} onClick={handleSearch}>Search</button >
 
-      {locationResults.length > 0 && (
+      {locationResults.length > 0 ? (
         <>
           <h3>Location Results</h3>
           <table className="location-table">
@@ -47,6 +53,8 @@ const SearchKeyword = () => {
             </tbody>
           </table>
         </>
+      ) : (
+        error && <p>{error}</p>
       )}
     </>
   );
