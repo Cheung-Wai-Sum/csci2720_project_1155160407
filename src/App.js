@@ -8,11 +8,14 @@ import {
   } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+
+import Table from './components/home.js';
 
 const Home = () => (
   <div>
-    <h2>Home</h2>
-    <p>Welcome to the home page!</p>
+    <Table />
   </div>
 );
 
