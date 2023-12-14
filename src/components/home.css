@@ -11,13 +11,13 @@
   }
   
   .event-table th {
-    background-color: #f2f2f2;
+    background-color: #9d9b9b;
     font-weight: bold;
     text-align: left;
   }
   
   .event-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #e3e3e3;
   }
   
   .event-table tbody tr:hover {
@@ -38,13 +38,13 @@
   }
   
   .location-table th {
-    background-color: #f2f2f2;
+    background-color: #9d9b9b;
     font-weight: bold;
     text-align: left;
   }
   
   .location-table tbody tr:nth-child(even) {
-    background-color: #f9f9f9;
+    background-color: #e3e3e3;
   }
   
   .location-table tbody tr:hover {
