@@ -1,0 +1,42 @@
+[{
+  "_id": {
+    "$oid": "657b49de654629093fc60f5f"
+  },
+  "username": "user",
+  "comment": "good place",
+  "venue": {
+    "$oid": "657a3fe8654629093fc60e89"
+  }
+},
+{
+  "_id": {
+    "$oid": "657b4a09654629093fc60f61"
+  },
+  "username": "user",
+  "comment": "bad place",
+  "venue": {
+    "$oid": "657a44ad654629093fc60e98"
+  }
+},
+{
+  "_id": {
+    "$oid": "657b4ff1b27e44f7755992e6"
+  },
+  "username": "user",
+  "comment": "testing",
+  "venue": {
+    "$oid": "657a4504654629093fc60e99"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "657b57e58a1e255b3e73abeb"
+  },
+  "username": "user",
+  "comment": "test",
+  "venue": {
+    "$oid": "657a471c654629093fc60ea4"
+  },
+  "__v": 0
+}]

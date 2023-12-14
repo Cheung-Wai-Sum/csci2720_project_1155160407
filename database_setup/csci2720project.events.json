@@ -417,4 +417,21 @@
   "description": "Class",
   "presenter": "Edelweiss Chinese Musical Art Workshop",
   "price": 0
+},
+{
+  "_id": {
+    "$oid": "657b2e25dc9cc562a1b422fa"
+  },
+  "eventid": 31,
+  "title": "testing",
+  "venue": {
+    "$oid": "657a4772654629093fc60ea5"
+  },
+  "date": {
+    "$date": "2023-12-18T14:30:00.000Z"
+  },
+  "description": "testing",
+  "presenter": "testing",
+  "price": 1000,
+  "__v": 0
 }]

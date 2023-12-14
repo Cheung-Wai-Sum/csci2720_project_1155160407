@@ -13,4 +13,13 @@
   "username": "user",
   "password": "test1234",
   "permission": "user"
+},
+{
+  "_id": {
+    "$oid": "657b443a7971f5e18dabe826"
+  },
+  "username": "test",
+  "password": "testtest",
+  "permission": "user",
+  "__v": 0
 }]
