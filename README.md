@@ -1,29 +1,36 @@
-### MongoDB database setup
-The dataset of  collection "events" "venue" is inside the folder of database_setup
-You need to import csci2720project.events.json csci2720project.venues.json to the Local MongoDB database.
+How to run our Project Locally using React and MongoDB
+Step 1 Download the submitted  zip file and unzip
 
-## 1.Open a terminal to Run the Local Server
+Step 2 Open MongoDB Compass
+Configure mongodb://localhost:27017
+Connect to the MongoDB
+Add a database named “csci2720project”
+After running node server.js the collection “comments”, ”events”, ”favourite”, ”users”, ”venues” should be created
 
-### `node server.js`
+Step 3 Import the json file to the corresponding collection:
+The dataset of collections are inside the folder of database_setup.
+First download the json file:
+csci2720project.comments.json -> import to collection ”comments”
+csci2720project.events.json -> import to collection ” events”
+csci2720project.favourites.json -> import to collection “favourites”
+csci2720project.users.json -> import to collection ”users”
+csci2720project.venues.json -> import to collection ”venues”
 
-## 2.Open another terminal to Install module
+Step 4 Run npm install
+Also can check with the package.json file with the dependencies,
+The required module includes:
+@react-google-maps/api
+axios
+bootstrap
+express
+mongoose
+react
+react-router-dom
+react-dom
+react-scripts
 
-### `npm install`
+Step 5 Run node server.js and npm start in separate terminal
 
-## 3. In the terminal run
 
-In the project directory, you can run:
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-## (For Group member) Open your git branch
-
-### `git branch dev_(name)`
-### `git checkout dev_(name)`
 
