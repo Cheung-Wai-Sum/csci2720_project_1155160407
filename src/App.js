@@ -66,15 +66,20 @@ const Admin = () => (
 class App extends React.Component{
   handleLogout = () =>{
     localStorage.removeItem('permission')
+    localStorage.removeItem('username')
     window.location.href = 'http://localhost:3001/admin'
   }
   render(){
       const permission  = localStorage.getItem('permission');
+      const username = localStorage.getItem('username')
       return(
           <>
-              <h1 className= "bg-primary" style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
-                CSCI 2720 Group Project Cultural Event Platform
-              </h1>
+              <div className="d-flex align-items-center justify-content-between bg-primary p-2">
+                <h1 className="text-white m-0" style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold' }}>
+                  CSCI 2720 Group Project Cultural Event Platform
+                </h1>
+                <h1 className="text-white m-0" style={{fontSize: '24px'}}>{username}</h1>
+              </div>
               <BrowserRouter>
               <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">

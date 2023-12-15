@@ -23,6 +23,7 @@ const Login = () => {
         // path to homepage
         window.location.href = 'http://localhost:3001/admin';
         localStorage.setItem("permission", data.permission)
+        localStorage.setItem("username", username)
       } else {
         // Login failed, display error message to the user
         console.error('Login failed:', data.message);
