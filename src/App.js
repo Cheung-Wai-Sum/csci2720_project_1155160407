@@ -64,6 +64,10 @@ const Admin = () => (
 );
 
 class App extends React.Component{
+  handleLogout = () =>{
+    localStorage.removeItem('permission')
+    window.location.href = 'http://localhost:3001/admin'
+  }
   render(){
       const permission  = localStorage.getItem('permission');
       return(
@@ -100,6 +104,9 @@ class App extends React.Component{
                   </li>
                   <li className="nav-item">
                     <Link className="nav-link" to="/admin">Admin Panel</Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link className="nav-link" to="/logout" onClick={this.handleLogout}>Logout</Link>
                   </li>
                 </ul>
               </div>
