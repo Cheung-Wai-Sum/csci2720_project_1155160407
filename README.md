@@ -27,7 +27,6 @@ mongoose
 react
 react-router-dom
 react-dom
-react-scripts
 
 Step 5 Run node server.js and npm start in separate terminal
 
