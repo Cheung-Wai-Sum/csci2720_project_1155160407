@@ -43,7 +43,7 @@ const Sorting = () => {
 
   return (
     <>
-      <h1></h1>
+      
       <h2>Number of Events at a venue</h2>
       <table className="location-table">
         <thead>

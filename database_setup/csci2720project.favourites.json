@@ -1,0 +1,28 @@
+[{
+  "_id": {
+    "$oid": "657b59d4654629093fc60f8d"
+  },
+  "username": "user",
+  "venue": {
+    "$oid": "657a3fe8654629093fc60e89"
+  }
+},
+{
+  "_id": {
+    "$oid": "657b59ef654629093fc60f92"
+  },
+  "username": "user",
+  "venue": {
+    "$oid": "657a4611654629093fc60e9e"
+  }
+},
+{
+  "_id": {
+    "$oid": "657b5a50a41caa5da2974638"
+  },
+  "username": "user",
+  "venue": {
+    "$oid": "657a4772654629093fc60ea5"
+  },
+  "__v": 0
+}]

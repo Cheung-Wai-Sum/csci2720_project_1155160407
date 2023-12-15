@@ -91,7 +91,35 @@ db.once('open', function () {
     }
   });
 
+  const CommentSchema = mongoose.Schema({
+    username: {
+      type: String,
+      required: true,
+    },
+    comment: {
+      type: String,
+      required: true,
+    },
+    venue: {
+      type: Schema.Types.ObjectId,
+      ref: 'venues',
+    },
+  });
+
+  const FavouriteSchema = mongoose.Schema({
+    username: {
+      type: String,
+      required: true,
+    },
+    venue: {
+      type: Schema.Types.ObjectId,
+      ref: 'venues',
+    },
+  });
+
   const User = mongoose.model("users", UserSchema);
+  const Comment = mongoose.model("comments", CommentSchema);
+  const Favourite = mongoose.model("favourite", FavouriteSchema);
   const Event = mongoose.model("events", EventSchema);
   const Venue = mongoose.model("venues", VenueSchema);
 
@@ -285,7 +313,7 @@ db.once('open', function () {
     }
   });
 
-  //admin create user
+  // admin create user
   app.post('/createuser', async (req, res) => {
     try {
       const username = req.body.username;
@@ -308,12 +336,146 @@ db.once('open', function () {
         await newUser.save();
       }
   
-      res.status(200).send('User created/updated successfully');
+      res.status(200).send('User created/update successfully:' + username);
     } catch (error) {
       console.error(error);
       res.status(500).send('Internal Server Error');
     }
   });
+
+  // read user
+  app.get('/api/read', async (req, res) => {
+    try {
+      // Assuming you have a User model/schema defined
+      const users = await User.find().exec();
+  
+      res.status(200).json(users);
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  // delete user
+  app.post('/deleteuser', async (req, res) => {
+    try {
+      const username = req.body.username;
+  
+      const user = await User.findOne({ username: username }).exec();
+  
+      if (!user) {
+        res.status(404).send('User not found');
+      } else {
+        await User.deleteOne({ username: username });
+        res.status(200).send('User deleted successfully: ' + username);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  //read comment
+  app.get('/api/comment', async (req, res) => {
+    try {
+      const comments = await Comment.find().populate('venue', 'vid location');
+      
+      if (comments.length === 0) {
+        res.status(404).send('No events found');
+      } else {
+        const formattedComments = comments.map(comment => {
+          return {
+            username: comment.username,
+            comment: comment.comment,
+            venue: {
+              vid: comment.venue.vid,
+              location: comment.venue.location,
+            },
+            
+          };
+        });
+        console.log(formattedComments);
+        res.status(200).json(formattedComments);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  app.post('/addcomment', async (req, res) => {
+    try {
+      const userName = req.body.userName;
+      const userComment = req.body.userComment;
+      const locationID = req.body.locationID;
+
+      const venue = await Venue.findOne({vid : locationID});
+  
+      // Assuming you have a Comment model/schema defined
+      const newComment = new Comment({
+        username: userName,
+        comment: userComment,
+        venue: venue._id,
+      });
+  
+      await newComment.save();
+  
+      res.status(200).send('Comment added successfully');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+  
+  //read favourite
+  app.get('/api/favourite', async (req, res) => {
+    try {
+      const favourites = await Favourite.find().populate('venue', 'vid location');
+      
+      if (favourites.length === 0) {
+        res.status(404).send('No events found');
+      } else {
+        const formattedFavourites = favourites.map(favourite => {
+          return {
+            username: favourite.username,
+            venue: {
+              vid: favourite.venue.vid,
+              location: favourite.venue.location,
+            },
+            
+          };
+        });
+        console.log(formattedFavourites);
+        res.status(200).json(formattedFavourites);
+      }
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  // add favourite
+  app.post('/addfavourite', async (req, res) => {
+    try {
+      const userName = req.body.userName;
+      const locationID = req.body.locationID;
+      
+      const venue = await Venue.findOne({vid : locationID});
+      const newFavourite = new Favourite({
+        username: userName,
+        venue: venue._id,
+      });
+      console.log(venue);
+  
+      await newFavourite.save();
+  
+      res.status(200).send('Favourite Location added successfully');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
 
   //End of DB
 })
