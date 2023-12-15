@@ -17,7 +17,7 @@ csci2720project.users.json -> import to collection ”users”
 csci2720project.venues.json -> import to collection ”venues”
 
 Step 4 Run npm install
-Also can check with the package.json file with the dependencies,
+You can check with the package.json file with the dependencies,
 The required module includes:
 @react-google-maps/api
 axios
