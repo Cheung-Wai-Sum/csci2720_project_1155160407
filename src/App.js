@@ -4,6 +4,7 @@ import {
   Routes,
   Route,
   Link,
+  Navigate,
   } from 'react-router-dom';
 
 
@@ -62,9 +63,9 @@ const Admin = () => (
   </div>
 );
 
-
 class App extends React.Component{
   render(){
+      const permission  = localStorage.getItem('permission');
       return(
           <>
               <h1 className= "bg-primary" style={{ fontFamily: 'Arial', fontSize: '24px', fontWeight: 'bold', color: '#333' }}>
@@ -106,14 +107,14 @@ class App extends React.Component{
           </nav>
 
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/number" element={<Number />} />
-                  <Route path="/location" element={<Location />} />
-                  <Route path="/search" element={<Search />} />
-                  <Route path="/comment" element={<Comment />} />
-                  <Route path="/favourite" element={<Favourite />} />
-                  <Route path="/price" element={<Price />} />
-                  <Route path="/admin" element={<Admin />} />
+                  <Route path="/" element={permission ? <Home /> : <Navigate to="/login" replace />} />
+                  <Route path="/number" element={permission ? <Number /> : <Navigate to="/login" replace />} />
+                  <Route path="/location" element={permission ? <Location /> : <Navigate to="/login" replace />} />
+                  <Route path="/search" element={permission ? <Search /> : <Navigate to="/login" replace />} />
+                  <Route path="/comment" element={permission ? <Comment /> : <Navigate to="/login" replace />} />
+                  <Route path="/favourite" element={permission ? <Favourite /> : <Navigate to="/login" replace />} />
+                  <Route path="/price" element={permission ? <Price /> : <Navigate to="/login" replace />} />
+                  <Route path="/admin" element={permission === 'admin' ? <Admin /> : (permission === 'user' ? <Navigate to="/" replace /> : <Navigate to="/login" replace />)} />
                   <Route path="/login" element={<Login />} />
                 </Routes>
               </BrowserRouter>
