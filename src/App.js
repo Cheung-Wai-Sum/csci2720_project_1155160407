@@ -17,6 +17,8 @@ import Pannel from './components/pannel.jsx';
 import Login from './components/loginPage.js';
 import UserComment from './components/comment.js';
 import Userfavourite from './components/favourite.js';
+import Locat from './components/location.js'
+import Lists from './components/list'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const Home = () => (
@@ -33,7 +35,13 @@ const Number = () => (
 
 const Location = () => (
   <div>
-    
+    <Locat />
+  </div>
+);
+
+const List = () => (
+  <div>
+    <Lists />
   </div>
 );
 
@@ -102,6 +110,9 @@ class App extends React.Component{
                     <Link className="nav-link" to="/location">Location</Link>
                   </li>
                   <li className="nav-item">
+                    <Link className="nav-link" to="/list">List</Link>
+                  </li>
+                  <li className="nav-item">
                     <Link className="nav-link" to="/comment">Comment</Link>
                   </li>
                   <li className="nav-item">
@@ -122,6 +133,7 @@ class App extends React.Component{
                   <Route path="/" element={permission ? <Home /> : <Navigate to="/login" replace />} />
                   <Route path="/number" element={permission ? <Number /> : <Navigate to="/login" replace />} />
                   <Route path="/location" element={permission ? <Location /> : <Navigate to="/login" replace />} />
+                  <Route path="/list" element={permission ? <List /> : <Navigate to="/login" replace />} />
                   <Route path="/search" element={permission ? <Search /> : <Navigate to="/login" replace />} />
                   <Route path="/comment" element={permission ? <Comment /> : <Navigate to="/login" replace />} />
                   <Route path="/favourite" element={permission ? <Favourite /> : <Navigate to="/login" replace />} />

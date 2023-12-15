@@ -476,6 +476,63 @@ db.once('open', function () {
     }
   });
 
+  //marco
+  app.get('/api/lists', async (req, res) => {
+    try {
+      const venues = await Venue.find();
+      if(venues.length === 0){
+        res.status(404).send('No venues found');
+      }else{
+          const formattedVenues = venues.map(item => {
+              //console.log(item.geometry.coordinates[0])
+              //console.log(item.geometry.coordinates[1])
+              return{
+                  vid: item.vid,
+                  location: item.location,
+                  longtitude:item.geometry.coordinates[0],
+                  latitude:item.geometry.coordinates[1]
+
+              }
+          })
+          //console.log(formattedVenues)
+          res.status(200).json(formattedVenues);
+      }
+      //res.json("123" + venues);
+      //console.log(venues);
+    } catch (err) {
+      console.error('Error retrieving venue data:', err);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
+  app.get('/api/getvenue', async (req, res) => {
+    try {
+      const venues = await Venue.find();
+      if(venues.length === 0){
+        res.status(404).send('No venues found');
+      }else{
+          const formattedVenues = venues.map(item => {
+              //console.log(item.geometry.coordinates[0])
+              //console.log(item.geometry.coordinates[1])
+              return{
+                  vid: item.vid,
+                  location: item.location,
+                  longtitude:item.geometry.coordinates[0],
+                  latitude:item.geometry.coordinates[1]
+
+              }
+          })
+          //console.log(formattedVenues)
+          res.status(200).json(formattedVenues);
+      }
+      //res.json("123" + venues);
+      //console.log(venues);
+    } catch (err) {
+      console.error('Error retrieving venue data:', err);
+      res.status(500).send('Internal Server Error');
+    }
+  });
+
 
   //End of DB
 })
